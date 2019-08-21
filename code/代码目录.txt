@@ -1,0 +1,6 @@
+用户中心：mall-admin
+支付中心：mall-payment
+营销中心：mall-marketing
+
+vue安装：https://www.cnblogs.com/ganmy/p/6029774.html
+Element UI：https://cloud.tencent.com/developer/section/1489870
