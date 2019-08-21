@@ -8,5 +8,9 @@
     <artifactId>MALL</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
+    <modules>
+        <module>mall-admin</module>
+        <module>mall-payment</module>
+        <module>mall-demo</module>
+    </modules>
 </project>

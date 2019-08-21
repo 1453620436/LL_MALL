@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 用户管理
+ * Created by macro on 2019/8/21.
  */
 @Controller
 @Api(tags = "UserController",description = " 用户管理")
@@ -22,6 +23,7 @@ public class UserController {
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ResponseBody
     public Object login(@RequestBody User user){
+        System.out.println("用户登录");
         return new CommonResult().success("登录成功！");
     }
 }

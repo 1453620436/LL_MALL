@@ -9,12 +9,14 @@
         <module name="MALL" />
         <module name="mall-admin" />
         <module name="mall-demo" />
+        <module name="mall-payment" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="MALL" target="1.5" />
       <module name="mall-admin" target="1.8" />
       <module name="mall-demo" target="1.8" />
+      <module name="mall-payment" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
