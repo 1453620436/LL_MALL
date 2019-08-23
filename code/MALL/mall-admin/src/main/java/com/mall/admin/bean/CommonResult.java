@@ -25,4 +25,39 @@ public class CommonResult {
         this.data = data;
         return  this;
     }
+
+    /**
+     * 参数验证失败使用
+     *
+     * @param message 错误信息
+     */
+    public CommonResult validateFailed(String message) {
+        this.code = VALIDATE_FAILED;
+        this.message = message;
+        return this;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
 }

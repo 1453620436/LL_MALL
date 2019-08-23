@@ -12,5 +12,6 @@
         <module>mall-admin</module>
         <module>mall-payment</module>
         <module>mall-demo</module>
+        <module>mall-marketing</module>
     </modules>
 </project>
