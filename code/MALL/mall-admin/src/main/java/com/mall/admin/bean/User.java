@@ -21,7 +21,7 @@ public class User {
     @NotEmpty(message = "身份证件号不能为空")
     private String idCard;
 
-    @ApiModelProperty(value = "用户名",required = true)
+    @ApiModelProperty(value = "用户名")
     @NotEmpty(message = "用户名不能为空")
     private String username;
 

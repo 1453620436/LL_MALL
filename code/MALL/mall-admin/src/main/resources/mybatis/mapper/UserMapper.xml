@@ -12,4 +12,24 @@
         </if>
     </select>
 
+    <insert id="inserUser" parameterType="com.mall.admin.bean.User">
+        INSERT INTO USER (ID_CARD,USERNAME,PASSWORD,TELETHONE,EMAIL)
+                VALUES (#{idCard,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{telethone,jdbcType=VARCHAR},#{email,jdbcType=VARCHAR})
+    </insert>
+    
+    <select id="findUser" parameterType="com.mall.admin.bean.User" resultType="com.mall.admin.bean.User">
+        SELECT  * FROM USER t WHERE 1=1
+        <if test="idCard !=null">
+            and t.ID_CARD = #{idCard,,jdbcType=VARCHAR}
+        </if>
+        <if test="username !=null">
+            and t.USERNAME = #{username,,jdbcType=VARCHAR}
+        </if>
+        <if test="telethone !=null">
+            and t.TELETHONE = #{telethone,,jdbcType=VARCHAR}
+        </if>
+        <if test="email !=null">
+            and t.EMAIL = #{email,,jdbcType=VARCHAR}
+        </if>
+    </select>
 </mapper>

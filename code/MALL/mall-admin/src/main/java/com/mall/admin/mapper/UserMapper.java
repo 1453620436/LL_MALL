@@ -18,6 +18,12 @@ public interface UserMapper {
     //根据用户名和密码查询出用户信息
     User getUser(User user);
 
+    //用户注册
+    int inserUser(User user);
+
+    //校验注册信息
+    List<User> findUser(User user);
+
     @Select("SELECT * FROM USER")
     List<User> findAll();
 }

@@ -37,6 +37,17 @@ public class CommonResult {
         return this;
     }
 
+    /**
+     * 操作失败
+     * @param message
+     * @return
+     */
+    public CommonResult failed(String message){
+        this.code = FAILED;
+        this.message = message;
+        return this;
+    }
+
     public int getCode() {
         return code;
     }

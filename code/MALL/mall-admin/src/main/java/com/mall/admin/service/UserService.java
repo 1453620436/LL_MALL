@@ -11,5 +11,9 @@ import java.util.List;
 public interface UserService {
     User getUser(User user);
 
+    int inserUser(User user);
+
+    List<User> findUser(User user);
+
     List<User> findAll();
 }
