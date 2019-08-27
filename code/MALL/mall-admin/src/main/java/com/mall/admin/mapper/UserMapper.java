@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * 用户表
+ * 用户表操作
  * Created by macro on 2019/8/22.
  */
 @Repository //标注数据访问组件

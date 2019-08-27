@@ -84,7 +84,7 @@ public class UserController {
         listUser = userService.findUser(validateEmail);
         if(null != listUser && listUser.size()>0) {
             User userFind = (User) listUser.get(0);
-            return new CommonResult().failed(user.getTelethone() + "邮箱已经注册，用户名为：" + userFind.getUsername());
+            return new CommonResult().failed(user.getEmail() + "邮箱已经注册，用户名为：" + userFind.getUsername());
         }
         //注册新用户
         int count = userService.inserUser(user);

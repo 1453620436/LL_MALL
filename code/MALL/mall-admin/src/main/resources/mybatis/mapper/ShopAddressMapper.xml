@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mall.admin.mapper.ShopAddressMapper">
+  <resultMap id="BaseResultMap" type="com.mall.admin.bean.ShopAddress">
+    <result column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="ADDRESSEE" jdbcType="VARCHAR" property="addressee" />
+    <result column="TELETHONE" jdbcType="VARCHAR" property="telethone" />
+    <result column="ID_CARD" jdbcType="VARCHAR" property="idCard" />
+    <result column="ZIP_CODE" jdbcType="DECIMAL" property="zipCode" />
+    <result column="PROVINCE" jdbcType="VARCHAR" property="province" />
+    <result column="CITY" jdbcType="VARCHAR" property="city" />
+    <result column="AREA" jdbcType="VARCHAR" property="area" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="UPDATE_DATE" jdbcType="TIMESTAMP" property="updateDate" />
+  </resultMap>
+
+  <delete id="delete" parameterType="java.lang.Long">
+    delete from shop_address where 1=1
+    <if test="id != null">
+      where id =  #{id}
+    </if>
+  </delete>
+
+  <insert id="insert" parameterType="com.mall.admin.bean.ShopAddress">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into shop_address (DEFAULT_ADDRESS,ADDRESSEE, TELETHONE, ID_CARD,
+      ZIP_CODE, PROVINCE, CITY, 
+      AREA, ADDRESS, CREATE_DATE, 
+      UPDATE_DATE)
+    values (#{defaultAddress,jdbcType=VARCHAR},#{addressee,jdbcType=VARCHAR}, #{telethone,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR},
+      #{zipCode,jdbcType=DECIMAL}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{area,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{updateDate,jdbcType=TIMESTAMP})
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.mall.admin.bean.ShopAddress">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into shop_address
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="defaultAddress != null">
+        DEFAULT_ADDRESS,
+      </if>
+      <if test="addressee != null">
+        ADDRESSEE,
+      </if>
+      <if test="telethone != null">
+        TELETHONE,
+      </if>
+      <if test="idCard != null">
+        ID_CARD,
+      </if>
+      <if test="zipCode != null">
+        ZIP_CODE,
+      </if>
+      <if test="province != null">
+        PROVINCE,
+      </if>
+      <if test="city != null">
+        CITY,
+      </if>
+      <if test="area != null">
+        AREA,
+      </if>
+      <if test="address != null">
+        ADDRESS,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="updateDate != null">
+        UPDATE_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="addressee != null">
+        #{addressee,jdbcType=VARCHAR},
+      </if>
+      <if test="telethone != null">
+        #{telethone,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null">
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="zipCode != null">
+        #{zipCode,jdbcType=DECIMAL},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="update" parameterType="com.mall.admin.bean.ShopAddress">
+    update shop_address
+    <set>
+      <if test="defaultAddress != null">
+        DEFAULT_ADDRESS = #{defaultAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="addressee != null">
+        ADDRESSEE = #{addressee,jdbcType=VARCHAR},
+      </if>
+      <if test="telethone != null">
+        TELETHONE = #{telethone,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null">
+        ID_CARD = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="zipCode != null">
+        ZIP_CODE = #{zipCode,jdbcType=DECIMAL},
+      </if>
+      <if test="province != null">
+        PROVINCE = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        CITY = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        AREA = #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <where>
+      <if test="id != null">
+        ID = #{id,jdbcType=DECIMAL},
+      </if>
+    </where>
+  </update>
+</mapper>
