@@ -23,10 +23,17 @@ public class ShopAddressController {
     @Autowired
     private ShopAddressService shopAddressService;
 
+    @ApiOperation(value = "加载当前用户的收货地址")
+    @RequestMapping(value = "/getAddress" ,method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult getAddress(@RequestBody String idCarId ) throws Exception{
+        return  null;
+    }
+
     @ApiOperation(value = "新增收货地址")
     @RequestMapping(value = "/insertShopAddress" ,method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult insertShopAddress(@RequestBody ShopAddress shopAddress) throws Exception{
+    public CommonResult insertShopAddress(@RequestBody ShopAddress shopAddress,String id) throws Exception{
         int count =  shopAddressService.insert(shopAddress);
         if(count>0){
             return new CommonResult().success("收货地址新增成功");

@@ -22,93 +22,17 @@
     </if>
   </delete>
 
-  <insert id="insert" parameterType="com.mall.admin.bean.ShopAddress">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into shop_address (DEFAULT_ADDRESS,ADDRESSEE, TELETHONE, ID_CARD,
+  <insert id="insert" parameterType="com.mall.admin.bean.ShopAddress" useGeneratedKeys="true" keyProperty="id">
+    insert into shop_address (ID,DEFAULT_ADDRESS,ADDRESSEE, TELETHONE, ID_CARD,
       ZIP_CODE, PROVINCE, CITY, 
       AREA, ADDRESS, CREATE_DATE, 
       UPDATE_DATE)
-    values (#{defaultAddress,jdbcType=VARCHAR},#{addressee,jdbcType=VARCHAR}, #{telethone,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR},
+    values (#{id,jdbcType=INTEGER},#{defaultAddress,jdbcType=VARCHAR},#{addressee,jdbcType=VARCHAR}, #{telethone,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR},
       #{zipCode,jdbcType=DECIMAL}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
       #{area,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
       #{updateDate,jdbcType=TIMESTAMP})
   </insert>
 
-  <insert id="insertSelective" parameterType="com.mall.admin.bean.ShopAddress">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into shop_address
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="defaultAddress != null">
-        DEFAULT_ADDRESS,
-      </if>
-      <if test="addressee != null">
-        ADDRESSEE,
-      </if>
-      <if test="telethone != null">
-        TELETHONE,
-      </if>
-      <if test="idCard != null">
-        ID_CARD,
-      </if>
-      <if test="zipCode != null">
-        ZIP_CODE,
-      </if>
-      <if test="province != null">
-        PROVINCE,
-      </if>
-      <if test="city != null">
-        CITY,
-      </if>
-      <if test="area != null">
-        AREA,
-      </if>
-      <if test="address != null">
-        ADDRESS,
-      </if>
-      <if test="createDate != null">
-        CREATE_DATE,
-      </if>
-      <if test="updateDate != null">
-        UPDATE_DATE,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="addressee != null">
-        #{addressee,jdbcType=VARCHAR},
-      </if>
-      <if test="telethone != null">
-        #{telethone,jdbcType=VARCHAR},
-      </if>
-      <if test="idCard != null">
-        #{idCard,jdbcType=VARCHAR},
-      </if>
-      <if test="zipCode != null">
-        #{zipCode,jdbcType=DECIMAL},
-      </if>
-      <if test="province != null">
-        #{province,jdbcType=VARCHAR},
-      </if>
-      <if test="city != null">
-        #{city,jdbcType=VARCHAR},
-      </if>
-      <if test="area != null">
-        #{area,jdbcType=VARCHAR},
-      </if>
-      <if test="address != null">
-        #{address,jdbcType=VARCHAR},
-      </if>
-      <if test="createDate != null">
-        #{createDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateDate != null">
-        #{updateDate,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
   <update id="update" parameterType="com.mall.admin.bean.ShopAddress">
     update shop_address
     <set>

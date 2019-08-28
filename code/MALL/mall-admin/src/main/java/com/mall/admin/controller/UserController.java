@@ -40,8 +40,7 @@ public class UserController {
         User loginUser = userService.getUser(user);
         if(loginUser!=null && loginUser.getIdCard()!=null) {
             System.out.println("登陆成功");
-           redisUtils.remove(loginUser.getUsername());
-            return new CommonResult().success("登陆成功！");
+            return new CommonResult().success(loginUser);
         }else{
 
         }

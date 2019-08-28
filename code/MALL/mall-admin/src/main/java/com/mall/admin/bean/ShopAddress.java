@@ -1,8 +1,10 @@
 package com.mall.admin.bean;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
 
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
@@ -15,9 +17,10 @@ import java.util.Date;
 @Getter
 @Setter
 public class ShopAddress implements Serializable {
+
     @ApiModelProperty(value = "主键ID",required = true)
     @NotEmpty(message = "主键ID不能为空")
-    private Long id;
+    private Integer id;
 
     @ApiModelProperty(value = "收货人")
     @NotEmpty(message = "收货人不能为空")
