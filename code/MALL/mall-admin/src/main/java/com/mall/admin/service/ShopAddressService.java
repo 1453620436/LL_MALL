@@ -1,6 +1,9 @@
 package com.mall.admin.service;
 
 import com.mall.admin.bean.ShopAddress;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * 收货地址
@@ -12,4 +15,6 @@ public interface ShopAddressService {
     int update(ShopAddress record);
 
     int delete( Long id);
+
+    List getAddress(String idCard);
 }

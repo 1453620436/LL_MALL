@@ -15,10 +15,17 @@
     <result column="UPDATE_DATE" jdbcType="TIMESTAMP" property="updateDate" />
   </resultMap>
 
+  <select id="getAddress" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT t.* FROM SHOP_ADDRESS t WHERE 1=1
+    <if test="idCard !=null">
+      and t.ID_CARD = #{idCard,jdbcType=VARCHAR}
+    </if>
+  </select>
+
   <delete id="delete" parameterType="java.lang.Long">
     delete from shop_address where 1=1
     <if test="id != null">
-      where id =  #{id}
+      AND id =  #{id}
     </if>
   </delete>
 
@@ -72,7 +79,7 @@
     </set>
     <where>
       <if test="id != null">
-        ID = #{id,jdbcType=DECIMAL},
+        ID = #{id,jdbcType=DECIMAL}
       </if>
     </where>
   </update>

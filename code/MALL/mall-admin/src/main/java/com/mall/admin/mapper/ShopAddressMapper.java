@@ -20,4 +20,6 @@ public interface ShopAddressMapper {
     int update(ShopAddress record);
 
     int delete(@Param("id") Long id);
+
+    List getAddress(@Param("idCard") String idCard);
 }

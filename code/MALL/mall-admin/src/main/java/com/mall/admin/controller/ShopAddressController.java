@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
+import java.util.List;
+
 /**
  * 用户收货地址管理
  * Created by macro on 2019/8/27.
@@ -27,7 +30,9 @@ public class ShopAddressController {
     @RequestMapping(value = "/getAddress" ,method = RequestMethod.POST)
     @ResponseBody
     public CommonResult getAddress(@RequestBody String idCarId ) throws Exception{
-        return  null;
+        System.out.println("查询收货地址，用户id为："+idCarId);
+        List list = shopAddressService.getAddress(idCarId);
+        return new CommonResult().success(shopAddressService.getAddress(idCarId));
     }
 
     @ApiOperation(value = "新增收货地址")
@@ -45,6 +50,7 @@ public class ShopAddressController {
     @RequestMapping(value = "/updateShopAddress" ,method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateShopAddress(@RequestBody ShopAddress shopAddress) throws Exception{
+        System.out.println("修改收货地址："+shopAddress.getId());
         int count =  shopAddressService.update(shopAddress);
         if(count>0){
             return new CommonResult().success("收货地址修改成功");
@@ -55,8 +61,9 @@ public class ShopAddressController {
     @ApiOperation(value = "删除收货地址")
     @RequestMapping(value = "/deleteShopAddress",method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult deleteShopAddress(@RequestBody Long id) throws  Exception{
-        int count =  shopAddressService.delete(id);
+    public CommonResult deleteShopAddress(@RequestBody ShopAddress shopAddress) throws  Exception{
+        System.out.println("收货地删除："+shopAddress.getId());
+        int count =  shopAddressService.delete(Long.valueOf(shopAddress.getId()));
         if(count>0){
             return new CommonResult().success("收货地址删除成功");
         }
