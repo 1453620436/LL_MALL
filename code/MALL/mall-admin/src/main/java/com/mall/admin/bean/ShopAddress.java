@@ -34,7 +34,7 @@ public class ShopAddress implements Serializable {
     private String idCard;
 
     @ApiModelProperty(value = "邮编")
-    private Integer zipCode;
+    private String zipCode;
 
     @ApiModelProperty(value = "省份")
     private String province;

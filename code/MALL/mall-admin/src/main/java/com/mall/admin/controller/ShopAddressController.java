@@ -39,6 +39,7 @@ public class ShopAddressController {
     @RequestMapping(value = "/insertShopAddress" ,method = RequestMethod.POST)
     @ResponseBody
     public CommonResult insertShopAddress(@RequestBody ShopAddress shopAddress,String id) throws Exception{
+        System.out.println("邮政编码："+shopAddress.getZipCode());
         int count =  shopAddressService.insert(shopAddress);
         if(count>0){
             return new CommonResult().success("收货地址新增成功");

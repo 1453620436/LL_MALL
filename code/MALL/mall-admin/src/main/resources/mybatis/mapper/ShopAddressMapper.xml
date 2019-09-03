@@ -6,7 +6,7 @@
     <result column="ADDRESSEE" jdbcType="VARCHAR" property="addressee" />
     <result column="TELETHONE" jdbcType="VARCHAR" property="telethone" />
     <result column="ID_CARD" jdbcType="VARCHAR" property="idCard" />
-    <result column="ZIP_CODE" jdbcType="DECIMAL" property="zipCode" />
+    <result column="ZIP_CODE" jdbcType="VARCHAR" property="zipCode" />
     <result column="PROVINCE" jdbcType="VARCHAR" property="province" />
     <result column="CITY" jdbcType="VARCHAR" property="city" />
     <result column="AREA" jdbcType="VARCHAR" property="area" />
@@ -35,7 +35,7 @@
       AREA, ADDRESS, CREATE_DATE, 
       UPDATE_DATE)
     values (#{id,jdbcType=INTEGER},#{defaultAddress,jdbcType=VARCHAR},#{addressee,jdbcType=VARCHAR}, #{telethone,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR},
-      #{zipCode,jdbcType=DECIMAL}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{zipCode,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR},
       #{area,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
       #{updateDate,jdbcType=TIMESTAMP})
   </insert>
@@ -56,7 +56,7 @@
         ID_CARD = #{idCard,jdbcType=VARCHAR},
       </if>
       <if test="zipCode != null">
-        ZIP_CODE = #{zipCode,jdbcType=DECIMAL},
+        ZIP_CODE = #{zipCode,jdbcType=VARCHAR},
       </if>
       <if test="province != null">
         PROVINCE = #{province,jdbcType=VARCHAR},
