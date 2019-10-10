@@ -3,6 +3,7 @@ package com.mall.admin.controller;
 import com.mall.admin.bean.CommonResult;
 import com.mall.admin.bean.User;
 import com.mall.admin.service.UserService;
+import com.mall.admin.util.MongodbGridFsUtil;
 import com.mall.admin.util.RedisUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -32,10 +33,23 @@ public class UserController {
     @Autowired
     private RedisUtils redisUtils;
 
+    @Autowired
+    private MongodbGridFsUtil mongodbGridFsUtil;
+
+    @ApiOperation(value = "更新用户信息")
+    @RequestMapping(value = "/updateUser",method = RequestMethod.POST)
+    @ResponseBody
+    public Object updateUser(@RequestBody String idCard) throws Exception{
+        return new CommonResult().success("查询成功");
+    }
+
     @ApiOperation(value = "用户登录")
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ResponseBody
     public Object login(@RequestBody User user) throws Exception{
+      mongodbGridFsUtil.contextLoads("C:\\Users\\Administrator\\Desktop\\TIM截图20191009101724.png","测试");
+
+        mongodbGridFsUtil.findFileByName("测试");
        System.out.println("用户名："+user.getUsername()+"用户密码："+user.getPassword());
         User loginUser = userService.getUser(user);
         if(loginUser!=null && loginUser.getIdCard()!=null) {

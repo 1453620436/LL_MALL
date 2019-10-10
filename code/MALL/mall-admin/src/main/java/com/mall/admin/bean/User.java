@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.util.Date;
 
 /**
  * 用户参数
@@ -42,4 +43,10 @@ public class User {
 
     @ApiModelProperty(value = "备注")
     private String note;
+
+    @ApiModelProperty(value = "性别")
+    private  String sex;
+
+    @ApiModelProperty(value = "真实姓名")
+    private String realname;
 }
