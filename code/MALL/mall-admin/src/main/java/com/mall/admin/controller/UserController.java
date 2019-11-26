@@ -47,9 +47,9 @@ public class UserController {
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ResponseBody
     public Object login(@RequestBody User user) throws Exception{
-      mongodbGridFsUtil.contextLoads("C:\\Users\\Administrator\\Desktop\\TIM截图20191009101724.png","测试");
+    /*  mongodbGridFsUtil.contextLoads("C:\\Users\\Administrator\\Desktop\\TIM截图20191009101724.png","测试");
 
-        mongodbGridFsUtil.findFileByName("测试");
+        mongodbGridFsUtil.findFileByName("测试");*/
        System.out.println("用户名："+user.getUsername()+"用户密码："+user.getPassword());
         User loginUser = userService.getUser(user);
         if(loginUser!=null && loginUser.getIdCard()!=null) {

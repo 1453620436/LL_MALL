@@ -1,9 +1,9 @@
 #MySQL数据源配置spring:
 spring:
   datasource:
-    url:  jdbc:mysql://localhost:3306/mall-shop?characterEncoding=utf8&serverTimezone=UTC
-    username: root
-    password: sasa
+    url:  jdbc:mysql://rm-snxuguifeng.mysql.rds.aliyuncs.com:3306/mall?characterEncoding=utf8&serverTimezone=UTC
+    username: mall
+    password: mall@123
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
