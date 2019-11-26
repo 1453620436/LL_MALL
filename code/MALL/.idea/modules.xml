@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MALL.iml" filepath="$PROJECT_DIR$/MALL.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-admin/mall-admin.iml" filepath="$PROJECT_DIR$/mall-admin/mall-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-demo/mall-demo.iml" filepath="$PROJECT_DIR$/mall-demo/mall-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mall-goods/mall-goods.iml" filepath="$PROJECT_DIR$/mall-goods/mall-goods.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-marketing/mall-marketing.iml" filepath="$PROJECT_DIR$/mall-marketing/mall-marketing.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-payment/mall-payment.iml" filepath="$PROJECT_DIR$/mall-payment/mall-payment.iml" />
     </modules>
