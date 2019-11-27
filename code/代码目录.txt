@@ -1,6 +1,10 @@
 用户中心：mall-admin
+商品中心：mall-goods
+营销商品管理中心（去掉）：mall-marketing
 支付订单中心：mall-payment
-营销商品管理中心：mall-marketing
 
 vue安装：https://www.cnblogs.com/ganmy/p/6029774.html
 Element UI：https://cloud.tencent.com/developer/section/1489870
+
+数据库地址：rm-bp1vj938703xw79612o.mysql.rds.aliyuncs.com  
+账号密码：shop_mall/mall@123

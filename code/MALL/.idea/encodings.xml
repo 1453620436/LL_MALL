@@ -4,6 +4,8 @@
     <file url="file://$PROJECT_DIR$/mall-admin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mall-admin/src/main/resources/application-redis.yml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/mall-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall-good" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall-goods" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mall-marketing" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mall-payment" charset="UTF-8" />
   </component>

@@ -6,10 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="MALL" />
         <module name="mall-admin" />
         <module name="mall-demo" />
-        <module name="mall-marketing" />
+        <module name="mall-goods" />
         <module name="mall-payment" />
       </profile>
     </annotationProcessing>
@@ -17,6 +16,8 @@
       <module name="MALL" target="1.5" />
       <module name="mall-admin" target="1.8" />
       <module name="mall-demo" target="1.8" />
+      <module name="mall-good" target="1.5" />
+      <module name="mall-goods" target="1.8" />
       <module name="mall-marketing" target="1.8" />
       <module name="mall-payment" target="1.8" />
     </bytecodeTargetLevel>
