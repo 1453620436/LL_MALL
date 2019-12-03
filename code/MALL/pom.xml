@@ -14,7 +14,5 @@
         <module>mall-payment</module>
         <module>mall-demo</module>
         <module>mall-goods</module>
-        <module>mall-good</module>
-        <module>mall-good</module>
     </modules>
 </project>
